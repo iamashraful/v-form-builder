@@ -6,17 +6,16 @@
     </div>
 </template>
 
-
 <script>
 export default {
-    name: 'TextInputForm',
-    props: ['title', ],
-    data() {
-        return {
-            value: '',
-            errorText: ''
-        }
-    },
+  name: 'TextInputForm',
+  props: [ 'title' ],
+  data () {
+    return {
+      value: '',
+      errorText: ''
+    }
+  }
 }
 </script>
 
@@ -30,4 +29,3 @@ export default {
         }
     }
 </style>
-
