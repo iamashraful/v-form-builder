@@ -1,7 +1,10 @@
 <template>
     <div class="example">
         <h2 class="title">Example 1</h2>
-        <v-form-builder :config="config"/>
+        <v-form-builder
+                submitBtnText="Save"
+                :config="config"
+        />
     </div>
 </template>
 
@@ -21,7 +24,8 @@ export default {
               {
                 title: 'First Name',
                 type: 'text',
-                name: 'first_name'
+                name: 'first_name',
+                required: true
               },
               {
                 title: 'Last Name',
@@ -31,7 +35,8 @@ export default {
               {
                 title: 'Email',
                 type: 'text',
-                name: 'email'
+                name: 'email',
+                required: true
               }
             ]
           },
