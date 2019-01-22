@@ -6,11 +6,15 @@
                 <div class="field-item" v-for="(item, index) in each.fields" :key="index">
                     <text-input-field
                         v-if="item.type === fieldTypes.text"
+                        :submitted="submitted"
                         :field="item" @validate="checkValidation">
                     </text-input-field>
                 </div>
             </div>
-            <button class="submit-btn" type="submit">{{ submitBtnText | setDefault('Submit') }}</button>
+            <button 
+              class="submit-btn" 
+              type="submit">{{ submitBtnText | setDefault('Submit') }}
+            </button>
         </form>
     </div>
 </template>
@@ -25,11 +29,14 @@ export default {
   data () {
     return {
       fieldTypes: fieldTypes,
-      errors: false
+      errors: false,
+      formData: {},
+      submitted: false
     }
   },
   methods: {
     handleSubmit () {
+      this.submitted = true
       this.runValidation().then(() => {
         console.log('submitted')
       }).catch((err) => {
@@ -38,16 +45,24 @@ export default {
     },
     runValidation () {
       return new Promise((resolve, reject) => {
-        if (!this.errors) {
-          resolve()
-        } else {
-          reject(this.errors)
+        let _error = false
+        let errorItem = undefined
+        Object.values(this.formData).map((item) => {
+          if (!(item.status)) {
+            _error = true
+            errorItem = item
+          }
+        })
+        if (_error) {
+          reject(errorItem)
+        }
+        else {
+          resolve(this.formData)
         }
       })
     },
-    checkValidation (status) {
-      console.log(status)
-      this.errors = !status
+    checkValidation (validatedData) {
+      this.formData[validatedData['field']['name']] = validatedData
     }
   },
   filters: {

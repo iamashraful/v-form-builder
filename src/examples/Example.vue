@@ -1,11 +1,11 @@
 <template>
-    <div class="example">
-        <h2 class="title">Example 1</h2>
-        <v-form-builder
-                submitBtnText="Save"
-                :config="config"
-        />
-    </div>
+<div class="example">
+  <h2 class="title">Example 1</h2>
+  <v-form-builder 
+    submitBtnText="Save" 
+    :config="config" 
+  />
+</div>
 </template>
 
 <script>
@@ -46,7 +46,8 @@ export default {
               {
                 title: 'Address',
                 type: 'text',
-                name: 'address'
+                name: 'address',
+                required: true
               }
             ]
           }
