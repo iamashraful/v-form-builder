@@ -34,7 +34,7 @@ export default {
               },
               {
                 title: 'Email',
-                type: 'text',
+                type: 'email',
                 name: 'email',
                 required: true
               }
