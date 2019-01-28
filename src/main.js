@@ -10,6 +10,17 @@ const Comp = process.env['NODE_ENV'] === 'Example' ? Example : App
 
 Vue.component(TextInputField)
 
+// This will help to call super
+Vue.prototype.$super = function(options) {
+  return new Proxy(options, {
+    get: (options, name) => {
+    	if(options.methods && name in options.methods) {
+      	return options.methods[name].bind(this);
+      }
+    },
+  });
+};
+
 new Vue({
   render: h => h(Comp)
 }).$mount('#app')

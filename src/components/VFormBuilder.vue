@@ -5,9 +5,15 @@
                 <h4 v-if="each.group !== undefined" class="group-title">{{ each.group }}</h4>
                 <div class="field-item" v-for="(item, index) in each.fields" :key="index">
                     <text-input-field
+                        v-if="item.type === fieldTypes.text"
                         :submitted="submitted"
                         :field="item" @validate="checkValidation">
                     </text-input-field>
+                    <positive-number-input-field
+                        v-if="item.type === fieldTypes.number"
+                        :submitted="submitted"
+                        :field="item" @validate="checkValidation">
+                    </positive-number-input-field>
                 </div>
             </div>
             <button 

@@ -2,7 +2,8 @@
 import AbstractField from '@/components/fields/AbstractField'
 
 export default {
-  name: 'TextInputField',
+  name: 'NumberInputField',
   extends: AbstractField,
 }
+</script>
 </script>

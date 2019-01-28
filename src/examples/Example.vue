@@ -37,6 +37,12 @@ export default {
                 type: 'email',
                 name: 'email',
                 required: true
+              },
+              {
+                title: 'Phone',
+                type: 'number',
+                name: 'phone_number',
+                required: false
               }
             ]
           },

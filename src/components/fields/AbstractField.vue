@@ -18,16 +18,16 @@ export default {
     }
   },
   methods: {
-    isValid (value, raiseExp = true) {
+    isValid (raiseExp = true) {
       let _data = {
         field: this.field,
-        [this.field.name]: value,
+        [this.field.name]: this.value,
         status: false
       }
       if (!raiseExp) {
         _data['status'] = false
       } else {
-        if (this.field.required && value === '') {
+        if (this.field.required && this.value === '') {
           this.errorText = 'This field is required.'
           _data['status'] = false
         } else {
@@ -35,10 +35,11 @@ export default {
           _data['status'] = true
         }
       }
-      this.$emit('validate', _data)
+      return _data
     },
     validate () {
-      this.isValid(this.value)
+      const _data = this.isValid(this.value)
+      this.$emit('validate', _data)
     }
   },
   mounted() {
