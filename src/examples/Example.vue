@@ -40,9 +40,15 @@ export default {
               },
               {
                 title: 'Phone',
-                type: 'number',
+                type: 'positive_number',
                 name: 'phone_number',
                 required: false
+              },
+              {
+                title: 'Profile Picture',
+                type: 'image',
+                name: 'profile_photo',
+                required: true
               }
             ]
           },

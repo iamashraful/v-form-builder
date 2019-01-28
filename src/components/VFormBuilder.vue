@@ -10,10 +10,20 @@
                         :field="item" @validate="checkValidation">
                     </text-input-field>
                     <positive-number-input-field
-                        v-if="item.type === fieldTypes.number"
+                        v-if="item.type === fieldTypes.positiveNumber"
                         :submitted="submitted"
                         :field="item" @validate="checkValidation">
                     </positive-number-input-field>
+                    <email-input-field
+                        v-if="item.type === fieldTypes.email"
+                        :submitted="submitted"
+                        :field="item" @validate="checkValidation">
+                    </email-input-field>
+                    <image-input-field
+                        v-if="item.type === fieldTypes.image"
+                        :submitted="submitted" out-format="base64"
+                        :field="item" @validate="checkValidation">
+                    </image-input-field>
                 </div>
             </div>
             <button

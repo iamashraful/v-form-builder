@@ -1,7 +1,7 @@
 <template>
     <div class="text-input">
         <label>{{ field.title }}</label>
-        <input :type="field.type" v-model="value" />
+        <input type="text" v-model="value" />
         <span v-show="displayErrorMgs" v-if="errorText !== ''" class="error">{{ errorText }}</span>
     </div>
 </template>
