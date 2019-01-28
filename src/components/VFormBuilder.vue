@@ -16,8 +16,8 @@
                     </positive-number-input-field>
                 </div>
             </div>
-            <button 
-              class="submit-btn" 
+            <button
+              class="submit-btn"
               type="submit">{{ submitBtnText | setDefault('Submit') }}
             </button>
         </form>
@@ -45,13 +45,13 @@ export default {
       this.runValidation().then(() => {
         console.log('submitted')
       }).catch((err) => {
-        console.log(err)
+        console.error(err)
       })
     },
     runValidation () {
       return new Promise((resolve, reject) => {
         let _error = false
-        let errorItem = undefined
+        let errorItem
         Object.values(this.formData).map((item) => {
           if (!(item.status)) {
             _error = true
@@ -60,8 +60,7 @@ export default {
         })
         if (_error) {
           reject(errorItem)
-        }
-        else {
+        } else {
           resolve(this.formData)
         }
       })

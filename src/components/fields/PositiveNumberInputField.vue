@@ -5,7 +5,7 @@ export default {
   name: 'PositiveNumberInputField',
   extends: AbstractField,
   methods: {
-    isValid() {
+    isValid () {
       const _data = this.$super(AbstractField).isValid()
       if (_data[_data['field'].name] < 0) {
         this.errorText = 'This should be positive number.'

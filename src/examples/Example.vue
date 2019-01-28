@@ -1,9 +1,9 @@
 <template>
 <div class="example">
   <h2 class="title">Example 1</h2>
-  <v-form-builder 
-    submitBtnText="Save" 
-    :config="config" 
+  <v-form-builder
+    submitBtnText="Save"
+    :config="config"
   />
 </div>
 </template>

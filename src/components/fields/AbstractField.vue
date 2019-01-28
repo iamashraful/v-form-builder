@@ -38,11 +38,11 @@ export default {
       return _data
     },
     validate () {
-      const _data = this.isValid(this.value)
+      const _data = this.isValid()
       this.$emit('validate', _data)
     }
   },
-  mounted() {
+  mounted () {
     this.validate()
   },
   watch: {
