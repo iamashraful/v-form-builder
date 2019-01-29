@@ -1,7 +1,7 @@
 <template>
 <div class="example">
   <h2 class="title">Example 1</h2>
-  <v-form-builder
+  <v-form-maker
     submitBtnText="Save"
     :config="config"
   />
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import VFormBuilder from '../components/VFormBuilder'
+import VFormMaker from '../components/VFormMaker'
 
 export default {
   name: 'Example',
-  components: { VFormBuilder },
+  components: { VFormMaker },
   data () {
     return {
       config: {
@@ -40,7 +40,7 @@ export default {
               },
               {
                 title: 'Phone',
-                type: 'positive_number',
+                type: 'number',
                 name: 'phone_number',
                 required: false
               },
@@ -63,7 +63,6 @@ export default {
               }
             ]
           }
-
         ]
       }
     }

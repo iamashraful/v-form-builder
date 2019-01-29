@@ -9,6 +9,11 @@
                         :submitted="submitted"
                         :field="item" @validate="checkValidation">
                     </text-input-field>
+                    <number-input-field
+                        v-if="item.type === fieldTypes.number"
+                        :submitted="submitted"
+                        :field="item" @validate="checkValidation">
+                    </number-input-field>
                     <positive-number-input-field
                         v-if="item.type === fieldTypes.positiveNumber"
                         :submitted="submitted"
@@ -39,7 +44,7 @@ import './fields'
 import fieldTypes from '@/mappings/field-types'
 
 export default {
-  name: 'VFormBuilder',
+  name: 'VFormMaker',
   props: ['config', 'submitBtnText'],
   data () {
     return {

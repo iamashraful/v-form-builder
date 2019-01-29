@@ -1,10 +1,10 @@
 {
-  "name": "v-form-builder",
-  "version": "0.1.0",
-  "private": true,
+  "name": "v-form-maker",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "bundle": "vue-cli-service build --target lib --name v-form-maker ./src/components/VFormMaker.vue",
     "lint": "vue-cli-service lint",
     "example": "NODE_ENV=Example vue-cli-service serve"
   },
@@ -20,5 +20,12 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
-  }
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ]
 }
