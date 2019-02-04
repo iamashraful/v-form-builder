@@ -40,8 +40,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import './fields'
 import fieldTypes from '@/mappings/field-types'
+import VueSuperCallMethod from 'vue-super-call'
+
+Vue.prototype.$super = VueSuperCallMethod
 
 export default {
   name: 'VFormMaker',
